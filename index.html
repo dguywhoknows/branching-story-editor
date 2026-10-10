@@ -3,81 +3,66 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Story Weaver: Write stories where readers choose what happens</title>
-<meta name="description" content="Co-write branching fiction with AI on a live story graph, add variables and conditions, then share it as a playable page.">
+<title>Story Weaver: Write interactive fiction as a graph of passages and choices</title>
+<meta name="description" content="Write passages yourself or have the next one drafted for you, add variables and conditions to choices, and check that every ending can be reached. Export a playable HTML page or a Twine file.">
 <meta property="og:title" content="Story Weaver">
-<meta property="og:description" content="Co-write branching fiction with AI on a live story graph, add variables and conditions, then share it as a playable page.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%239333ea'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Arial,Helvetica,sans-serif' font-weight='700' font-size='13' fill='white'%3ESW%3C/text%3E%3C/svg%3E">
+<meta property="og:description" content="Write passages yourself or have the next one drafted for you, add variables and conditions to choices, and check that every ending can be reached. Export a playable HTML page or a Twine file.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23a0395a'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='19' fill='white'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style id="type">:root { --font-head: 'Source Serif 4', Georgia, serif; --font-body: 'Source Sans 3', system-ui, sans-serif; }</style>
 <link rel="stylesheet" href="styles/base.css">
 <link rel="stylesheet" href="styles/landing.css">
-<style>:root { --accent: #9333ea; }</style>
+<style>:root { --accent: #a0395a; }</style>
 </head>
 <body class="landing">
-<header class="l-nav">
-  <a class="l-brand" href="#top"><span class="logo">SW</span><b>Story Weaver</b></a>
-  <nav aria-label="Sections"><a href="#demo">Demo</a><a href="#ask">Ask it</a><a href="#features">Features</a><a href="#faq">FAQ</a></nav>
-  <div class="l-nav-cta"><a class="btn ghost" href="login.html">Log in</a><a class="btn primary" href="login.html">Get started free</a></div>
-</header>
+<header class="l-nav"><div class="l-wrap l-nav-in">
+  <a class="l-brand" href="#top">Story Weaver</a>
+  <nav aria-label="Sections"><a href="#demo">Try it</a><a href="#ask">Commands</a><a href="#features">Features</a><a href="https://github.com/dguywhoknows/branching-story-editor" rel="noopener">Source</a></nav>
+  <div class="l-nav-cta"><a class="btn ghost" href="login.html">Log in</a><a class="btn primary" href="login.html">Sign up free</a></div>
+</div></header>
 
 <main id="top">
-  <section class="l-hero">
-    <p class="l-kicker">Free · runs in your browser · AI built in</p>
-    <h1>Write stories where readers choose what happens.</h1>
-    <p class="l-sub">Co-write branching fiction with AI on a live story graph, add variables and conditions, then share it as a playable page.</p>
-    <div class="l-actions"><a class="btn primary big" href="login.html">Get started free</a><a class="btn big" href="#demo">See it working</a></div>
+  <section class="l-wrap l-hero">
+    <h1>Write interactive fiction as a graph of passages and choices.</h1>
+    <p class="l-sub">Write passages yourself or have the next one drafted for you, add variables and conditions to choices, and check that every ending can be reached. Export a playable HTML page or a Twine file.</p>
+    <div class="l-actions"><a class="btn primary big" href="login.html">Sign up free</a><a class="l-link" href="#demo">Or try it on this page</a></div>
+    <p class="l-meta">Version 2.0.0 · MIT license · <a href="https://github.com/dguywhoknows/branching-story-editor" rel="noopener">github.com/dguywhoknows/branching-story-editor</a></p>
   </section>
 
-  <section class="l-demo reveal" id="demo">
-    <div class="l-window"><div class="l-window-bar"><i></i><i></i><i></i><span>Story Weaver</span></div>
-      <iframe src="app.html?embed=1" title="Story Weaver live demo" loading="lazy"></iframe></div>
-    <p class="l-caption">This is the real app running below, not a recording. Try it.</p>
+  <section class="l-wrap l-demo" id="demo">
+    <div class="l-frame"><iframe src="app.html?embed=1" title="Story Weaver" loading="lazy"></iframe></div>
+    <p class="l-caption">The app itself, running inside this page. Anything you do here is saved in your browser.</p>
   </section>
 
-  <section class="l-section reveal" id="ask">
-    <div class="l-head"><p class="l-kicker">Just say what you want</p><h2>Tell it in plain words. It uses its own tools to do it.</h2>
-      <p>Open the AI box in the app, type a request, and the AI drives the app's real features for you: it sets things up, edits, runs and reports back. Standing instructions let you shape every AI feature to how you like to work.</p></div>
-    <div class="l-prompts"><div class="l-prompt"><div class="say">Start a sci-fi story about a lighthouse on Mars</div><div class="does">Writes the opening and three choices.</div></div><div class="l-prompt"><div class="say">Only show the secret door if the reader found the key</div><div class="does">Adds a condition and an effect to the right choices.</div></div><div class="l-prompt"><div class="say">Can every ending actually be reached?</div><div class="does">Runs the analysis and reports problems.</div></div></div>
+  <section class="l-wrap l-section" id="ask">
+    <h2>Ask it to do things</h2>
+    <p class="l-lead">Press Ctrl+K in the app (Cmd+K on a Mac) and describe what you want. The model chooses from Story Weaver's own functions, runs them in order and tells you what changed. Some examples:</p>
+    <table class="l-cmds"><tr><td class="say">Start a sci-fi story about a lighthouse on Mars</td><td>Writes the opening and three choices.</td></tr><tr><td class="say">Only show the secret door if the reader found the key</td><td>Adds a condition and an effect to the right choices.</td></tr><tr><td class="say">Can every ending actually be reached?</td><td>Runs the analysis and reports problems.</td></tr></table>
+    <p class="l-small">Instructions you save in the same box, such as "keep it short" or "I'm a beginner", are added to every AI request the app makes.</p>
   </section>
 
-  <section class="l-section reveal" id="features">
-    <div class="l-head"><p class="l-kicker">What it does</p><h2>Everything in one place</h2></div>
-    <div class="l-grid"><div class="l-card"><h3>Layered graph layout</h3><p>Layered graph layout (BFS depth) with curved edges, pan/zoom, and &#x27;+&#x27; stubs for unwritten choices</p></div><div class="l-card"><h3>AI branch writing</h3><p>AI branch writing with path-aware context; nudges toward endings as paths deepen</p></div><div class="l-card"><h3>Passage editor</h3><p>Title, text, endings, choices wired to new or existing passages (merge branches)</p></div><div class="l-card"><h3>AI suggest-choices</h3><p>AI suggest-choices and rewrite-in-tone (more vivid, darker, funnier, shorter, more dialogue)</p></div><div class="l-card"><h3>AI continuity check along the</h3><p>AI continuity check along the path to any passage</p></div><div class="l-card"><h3>Story stats</h3><p>Passages, endings, open threads, longest path, unreachable nodes</p></div><div class="l-card"><h3>Gamebook play mode</h3><p>Gamebook play mode with back navigation; Twee 3 (Twine 2/Harlowe) and JSON export/import</p></div><div class="l-card"><h3>Story variables</h3><p>Choices can be shown only when a condition holds (trust &gt;= 2 &amp;&amp; hasKey) and can change variables when taken (trust += 1; hasKey = true); passages can show {variables} and {if …}…{/if} text. Expressions use a small tokenizer and recursive-descent parser, never eval</p></div><div class="l-card"><h3>Analysis page</h3><p>Explores every reachable (passage, variables) state to report which endings can actually be reached and how often, unreachable passages, dead ends, choices whose conditions can never be met, unwritten choices and invalid logic</p></div></div>
+  <section class="l-wrap l-section" id="features">
+    <h2>Features</h2>
+    <dl class="l-feats"><div><dt>Layered graph layout</dt><dd>BFS depth) with curved edges, pan/zoom, and &#x27;+&#x27; stubs for unwritten choices.</dd></div><div><dt>AI branch writing</dt><dd>With path-aware context; nudges toward endings as paths deepen.</dd></div><div><dt>Passage editor</dt><dd>Title, text, endings, choices wired to new or existing passages (merge branches).</dd></div><div><dt>AI suggest-choices</dt><dd>And rewrite-in-tone (more vivid, darker, funnier, shorter, more dialogue).</dd></div><div><dt>AI continuity check along the</dt><dd>Path to any passage.</dd></div><div><dt>Story stats</dt><dd>Passages, endings, open threads, longest path, unreachable nodes.</dd></div><div><dt>Gamebook play mode</dt><dd>With back navigation; Twee 3 (Twine 2/Harlowe) and JSON export/import.</dd></div><div><dt>Story variables</dt><dd>Choices can be shown only when a condition holds (trust &gt;= 2 &amp;&amp; hasKey) and can change variables when taken (trust += 1; hasKey = true); passages can show {variables} and {if …}…{/if} text. Expressions use a small tokenizer and recursive-descent parser, never eval.</dd></div><div><dt>Analysis page</dt><dd>Explores every reachable (passage, variables) state to report which endings can actually be reached and how often, unreachable passages, dead ends, choices whose conditions can never be met, unwritten choices and invalid logic.</dd></div><div><dt>Export a single self-contained HTML</dt><dd>File that plays the story in any browser, alongside JSON and Twee 3 for Twine 2 with variables translated to Harlowe (set:)/(if:) macros.</dd></div></dl>
   </section>
 
-  <section class="l-section reveal">
-    <div class="l-head"><p class="l-kicker">How it works</p><h2>Real engines where it counts, AI where it helps</h2></div>
-    <div class="l-steps">
-      <div><span>1</span><h3>Create a free account</h3><p>One account works across every app on this site.</p></div>
-      <div><span>2</span><h3>Ask in your own words</h3><p>Type or click. The AI handles opening + branch generation (JSON) with rolling path context; continuity auditing, choice suggestions and tone rewrites.</p></div>
-      <div><span>3</span><h3>Keep what you make</h3><p>Your work is saved in your browser and can be exported any time.</p></div>
-    </div>
-    <p class="l-note">Computed locally, with no AI involved: graph model, layout, editing, statistics, play mode, Twee/JSON serialization.</p>
+  <section class="l-wrap l-section l-split">
+    <div><h2>Runs in your browser</h2><p>Graph model, layout, editing, statistics, play mode, Twee/JSON serialization. None of this needs a network connection or a model.</p></div>
+    <div><h2>Uses a language model for</h2><p>Opening + branch generation with rolling path context. Continuity auditing, choice suggestions and tone rewrites.</p></div>
   </section>
 
-  <section class="l-section reveal" id="faq">
-    <div class="l-head"><p class="l-kicker">Questions</p><h2>Good to know</h2></div>
-    <div class="l-faq">
-      <details><summary>Is it free?</summary><p>Yes. Every feature is free. Each account gets a daily allowance of AI requests.</p></details>
-      <details><summary>Where is my data stored?</summary><p>What you create stays in this browser on this device. Your account is only used to sign you in and to use the built-in AI. You can export a backup or delete everything from Settings.</p></details>
-      <details><summary>Do I need an API key?</summary><p>No. Signed-in users get the built-in AI with nothing to set up. You can also connect your own Groq or OpenRouter key in Settings if you prefer.</p></details>
-      <details><summary>What can I type into the AI box?</summary><p>Anything you would ask a helpful colleague who knows the app, such as: "Start a sci-fi story about a lighthouse on Mars". It plans the steps, runs the app's own functions and tells you what it did. The Instructions tab saves preferences every AI feature follows.</p></details>
-      <details><summary>Can I see the code?</summary><p>Yes. It is open source under the MIT license on <a href="https://github.com/dguywhoknows/branching-story-editor" rel="noopener">GitHub</a>, with a <a href="tests/">public test suite</a>.</p></details>
-    </div>
-  </section>
-
-  <section class="l-final reveal">
-    <h2>Write stories where readers choose what happens.</h2>
-    <a class="btn primary big" href="login.html">Get started free</a>
+  <section class="l-wrap l-section" id="notes">
+    <h2>Notes</h2>
+    <dl class="l-notes">
+      <dt>Cost</dt><dd>Free. Each account has a daily allowance of AI requests.</dd>
+      <dt>Your data</dt><dd>What you make stays in this browser on this device. Your account is only used for signing in and for the built-in AI. You can export a backup or clear everything from Settings.</dd>
+      <dt>AI access</dt><dd>Signed-in users get the built-in AI with nothing to set up. You can also use your own Groq or OpenRouter key under Settings.</dd>
+      <dt>Source</dt><dd>The code and tests are on <a href="https://github.com/dguywhoknows/branching-story-editor" rel="noopener">GitHub</a> under the MIT license. The tests also run <a href="tests/">in your browser</a>.</dd>
+    </dl>
   </section>
 </main>
 
-<footer class="l-foot"><span>Story Weaver</span><span><a href="https://github.com/dguywhoknows/branching-story-editor" rel="noopener">Source</a> · <a href="tests/">Tests</a> · MIT license</span></footer>
-<script>
-document.querySelectorAll('.reveal').forEach((el) => el.classList.add('pre'));
-const io = new IntersectionObserver((es) => es.forEach((x) => { if (x.isIntersecting) { x.target.classList.remove('pre'); io.unobserve(x.target); } }), { threshold: 0.12 });
-document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
-</script>
+<footer class="l-foot"><div class="l-wrap l-foot-in"><span>Story Weaver, by <a href="https://github.com/dguywhoknows" rel="noopener">dguywhoknows</a></span><span><a href="https://github.com/dguywhoknows/branching-story-editor" rel="noopener">Source</a> · <a href="tests/">Tests</a> · <a href="login.html">Sign up free</a></span></div></footer>
 </body>
 </html>

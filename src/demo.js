@@ -1,4 +1,4 @@
-/* demo.js — a hand-written sample story that uses variables, plus canned passages used without a model provider. */
+/* A hand-written sample story that uses variables, plus canned passages used without a model provider. */
 var SAMPLE_STORY = {
   title: 'The Keeper’s Letter',
   premise: 'A lighthouse keeper on a remote island finds a message in a bottle addressed to her, dated 40 years in the future.',

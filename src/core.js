@@ -1,4 +1,4 @@
-/* core.js — story graph helpers, a small safe expression language for variables and conditions, state-space exploration, layout and exporters (pure, unit-tested). */
+/* Story graph helpers, a small safe expression language for variables and conditions, state-space exploration, layout and exporters (pure, unit-tested). */
 
 /* ---------- graph ---------- */
 function bfsParents(story) {

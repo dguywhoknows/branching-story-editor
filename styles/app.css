@@ -1,4 +1,4 @@
-:root { --accent: #9333ea; --story: 'Lora', Georgia, serif; }
+:root { --accent: #a0395a; --story: 'Lora', Georgia, serif; }
 .toolbar { display: flex; gap: 8px; align-items: center; padding: 10px 24px; border-bottom: 1px solid var(--line); background: var(--panel); flex-wrap: wrap; }
 .toolbar #premise { flex: 1; min-width: 220px; max-width: 560px; }
 .toolbar .sep { flex: 1; }
