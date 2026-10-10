@@ -1,0 +1,16 @@
+{
+  "name": "branching-story-editor",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Co-write branching interactive fiction with AI: a live story graph, continuity checks, play mode and Twine export.",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "test": "node tests/run-node.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dguywhoknows/branching-story-editor.git"
+  },
+  "homepage": "https://dguywhoknows.github.io/branching-story-editor/",
+  "license": "MIT"
+}
