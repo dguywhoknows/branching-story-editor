@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" data-gate="app">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Story Weaver</title>
+<meta name="description" content="Co-write branching interactive fiction with AI: a live story graph, continuity checks, play mode and Twine export.">
+<meta name="app-repo" content="https://github.com/dguywhoknows/branching-story-editor">
+<meta name="app-version" content="2.0.0">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%239333ea'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Arial%2CHelvetica%2Csans-serif' font-weight='700' font-size='13' fill='white'%3ESW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles/base.css">
+<link rel="stylesheet" href="styles/app.css">
+<script src="src/lib/config.js"></script>
+<script src="src/lib/auth.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a class="logo-link" href="index.html" aria-label="Home page"><span class="logo" aria-hidden="true">SW</span></a><div><h1>Story Weaver</h1><p>Branching stories, co-written with AI.</p></div></div>
+  <nav class="topnav" data-nav aria-label="Pages"></nav>
+  <div class="top-actions"><a class="btn ghost sm" href="https://github.com/dguywhoknows/branching-story-editor" target="_blank" rel="noopener">GitHub</a><span data-ai-badge></span></div>
+</header>
+<div class="page active" data-page="editor" data-title="Editor">
+<div class="toolbar">
+  <b id="storyTitle" class="toolbar-title"></b>
+  <span class="small muted" id="stats"></span>
+  <span class="sep"></span>
+  <button class="btn sm" id="addPassage">Add passage</button>
+  <button class="btn sm ghost" id="fitView">Fit</button>
+</div>
+<div class="studio" id="studio">
+  <svg id="graph" aria-label="Story graph"></svg>
+  <aside class="card editor">
+    <div class="tabs" id="edTabs"><button class="on" data-t="passage">Passage</button><button data-t="story">Story</button></div>
+    <div id="editor" class="stack"></div>
+    <div id="storyPanel" class="stack hidden"></div>
+  </aside>
+</div>
+</div>
+
+<div class="page" data-page="play" data-title="Play">
+<div class="reader" id="reader"></div>
+</div>
+
+<div class="page" data-page="analysis" data-title="Analysis">
+<main class="stack">
+  <div class="page-head"><div><h2>Analysis</h2><p>Every route a reader can take, given the variables and conditions.</p></div><div class="row"><button class="btn" id="runCheck">Continuity check (AI)</button><button class="btn primary" id="runExplore">Re-run</button></div></div>
+  <div class="kpis" id="anKpis"></div>
+  <div class="grid cols-2">
+    <div class="card"><h2>Endings</h2><div id="anEndings"></div></div>
+    <div class="card"><h2>Problems</h2><div id="anProblems"></div></div>
+  </div>
+  <div class="card hidden" id="checkCard"><h2>Continuity</h2><div id="checkOut"></div></div>
+</main>
+</div>
+
+<div class="page" data-page="library" data-title="Library">
+<main class="stack">
+  <div class="card stack">
+    <h2 style="margin:0">New story</h2>
+    <div class="row"><input class="input grow" id="premise" placeholder="Premise" value="A lighthouse keeper on a remote island finds a message in a bottle addressed to her, dated 40 years in the future." aria-label="Premise"><select id="genre" style="width:auto" aria-label="Genre"><option>mystery</option><option>sci-fi</option><option>fantasy</option><option>horror</option><option>romance</option><option>comedy</option></select><button class="btn primary" id="newStory">Write the opening</button><button class="btn" id="blankStory">Blank story</button></div>
+  </div>
+  <div class="page-head"><div><h2>Your stories</h2><p id="libSummary"></p></div><label class="btn ghost">Import JSON<input type="file" id="importJson" accept=".json" hidden></label></div>
+  <div class="grid cols-3" id="libList"></div>
+</main>
+</div>
+
+<div class="page" data-page="settings" data-title="Settings"></div>
+<script src="src/lib/dom.js"></script>
+<script src="src/lib/ai.js"></script>
+<script src="src/lib/router.js"></script>
+<script src="src/lib/copilot.js"></script>
+<script src="src/core.js"></script>
+<script src="src/demo.js"></script>
+<script src="src/app.js"></script>
+</body>
+</html>
